@@ -1,4 +1,4 @@
-server:
+ngrok:
   image: toby1991/ngrok:latest
   expose:
     - "80"
@@ -6,7 +6,7 @@ server:
   ports:
     - "4443:4443"
   volumes:
-    - /data/ngrok:/ngrok_data
+    - /ngrok:/ngrok_data
   environment:
     - DOMAIN="headfile.net"
   command: /bin/sh /server.sh
