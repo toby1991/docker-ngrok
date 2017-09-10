@@ -1,9 +1,9 @@
 FROM golang:1.7.1-alpine
-MAINTAINER hteen <i@hteen.cn>
+MAINTAINER Toby <t.post@hotmail.com>
 
 RUN apk add --no-cache git make openssl
 
-RUN git clone https://github.com/tutumcloud/ngrok.git /ngrok
+RUN git clone https://github.com/toby1991/ngrok.git /ngrok
 
 ADD *.sh /
 

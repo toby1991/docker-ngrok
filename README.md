@@ -3,17 +3,17 @@
 ## BUILD IMAGE
 
 ```linux
-git clone https://github.com/hteen/docker-ngrok.git
+git clone https://github.com/toby1991/docker-ngrok.git
 cd docker-ngrok
-docker build -t hteen/ngrok .
+docker build -t toby1991/ngrok:latest .
 ```
 
 ## RUN
-* you must mount your folder (E.g `/data/ngrok`) to container `/myfiles`
+* you must mount your folder (E.g `/data/ngrok`) to container `/ngrok_data`
 * if it is the first run, it will generate the binaries file and CA in your floder `/data/ngrok`
 
 ```linux
 docker run -idt --name ngrok-server \
--v /data/ngrok:/myfiles \
--e DOMAIN='tunnel.hteen.cn' hteen/ngrok /bin/sh /server.sh
+-v /data/ngrok:/ngrok_data \
+-e DOMAIN='headfile.net' toby1991/ngrok:latest /bin/sh /server.sh
 ```

@@ -1,11 +1,12 @@
 server:
-  image: hteen/ngrok
+  image: toby1991/ngrok:latest
+  expose:
+    - "80"
+    - "443"
   ports:
-    - "8082:80"
-    - "4432:443"
     - "4443:4443"
   volumes:
-    - /data/ngrok:/myfiles
+    - /data/ngrok:/ngrok_data
   environment:
-    - DOMAIN="tunnel.hteen.cn"
+    - DOMAIN="headfile.net"
   command: /bin/sh /server.sh
